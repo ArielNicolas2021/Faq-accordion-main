@@ -1,0 +1,128 @@
+/* Config */
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700&display=swap');
+
+:root {
+    --white: hsl(0, 0%, 100%);
+    --light-pink: hsl(275, 100%, 97%);
+    --grayish-purple: hsl(292, 16%, 49%);
+    --dark-purple: hsl(292, 42%, 14%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Mobile CSS */
+body {
+    font-family: 'Work Sans', sans-serif;
+    background-color: var(--light-pink);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    color: var(--dark-purple);
+}
+
+.background-mobile {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+}
+
+.background-desktop {
+    display: none;
+}
+
+.content {
+    margin: 10rem 2rem;
+    background-color: var(--white);
+    padding: 1.5rem;
+    border-radius: .5rem;
+    box-shadow: 2px 2px 20px 2px rgba(0,0,0,0.2);
+}
+
+.head {
+    display: flex;
+}
+
+.head > h1 {
+    margin-left: 2rem;
+    font-size: 2rem;
+    color: var(--dark-purple);
+}
+
+.accordion-block {
+    margin: 1rem 0;
+}
+
+.accordion-block-front {
+    display: flex;
+    justify-content: space-between;
+}
+
+hr {
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.accordion-title {
+    font-size: 1rem;
+    color: var(--dark-purple);
+}
+
+.accordion-text {
+    height: 0;
+    overflow: hidden;
+    color: var(--grayish-purple);
+    font-size: .85rem;
+    line-height: 1.5;
+    transition: all 1s;
+}
+
+.icon-minus {
+    display: none;
+}
+
+/* Desktop CSS */
+@media(min-width: 376px){
+    .background-mobile {
+        display: none;
+    }
+
+    .background-desktop {
+        display: block;
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        width: 100%;
+    }
+
+    .content {
+        margin: 10rem 16rem;
+    }
+
+    .icon-minus,
+    .icon-plus,
+    .accordion-title {
+        cursor: pointer;
+    }
+
+    .accordion-title:hover {
+        color: var(--grayish-purple);
+    }
+}
+
+/* Footer */
+.attribution {
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
